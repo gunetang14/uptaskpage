@@ -20,7 +20,7 @@ class Router
     public function comprobarRutas()
     {
 
-        $currentUrl = $_SERVER['PATH_INFO'] ?? '/';
+        $currentUrl = strtok($_SERVER['REQUEST_URI'], '?') ?? '/';
         $method = $_SERVER['REQUEST_METHOD'];
 
         if ($method === 'GET') {
@@ -34,7 +34,7 @@ class Router
             // Call user fn va a llamar una función cuando no sabemos cual sera
             call_user_func($fn, $this); // This es para pasar argumentos
         } else {
-            echo "Página No Encontrada o Ruta no válida";
+            header('Location: /404');
         }
     }
 

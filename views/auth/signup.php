@@ -14,6 +14,7 @@
                     placeholder="Tú Nombre"
                     name="nombre"
                     value="<?php echo $usuario->nombre; ?>"
+                    autocomplete="off"
                 />
             </div>
             <div class="campo">
@@ -24,6 +25,7 @@
                     placeholder="Tú Email"
                     name="email"
                     value="<?php echo $usuario->email; ?> "
+                    autocomplete="off"
                 />
             </div>
             <div class="campo">
@@ -33,6 +35,7 @@
                     id="password"
                     placeholder="Tú Password"
                     name="password"
+                    autocomplete="off"
                 />
             </div>
             <div class="campo">
@@ -42,6 +45,7 @@
                     id="password2"
                     placeholder="Repite Tú Password"
                     name="password2"
+                    autocomplete="off"
                 />
             </div>
             <input type="submit" class="boton" value="Crear Cuenta">

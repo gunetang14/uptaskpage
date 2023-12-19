@@ -13,6 +13,7 @@
                     id="email"
                     placeholder="Tú Email"
                     name="email"
+                    autocomplete="off"
                 />
             </div>
             <input type="submit" class="boton" value="Enviar Instrucciones">

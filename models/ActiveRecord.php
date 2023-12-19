@@ -189,4 +189,22 @@ class ActiveRecord {
           }
         }
     }
+    public function comprobarPassword() : bool {
+        return password_verify($this->password_actual, $this->password);
+    }
+    public function hashearPassword() : void {
+        $this->password = password_hash($this->password, PASSWORD_BCRYPT);
+    }
+    public function crearToken() : void {
+        $this->token = uniqid(); 
+    }
+    public function validarPassword(){
+        if(!$this->password){
+            self::$alertas['error'][] = 'El Password no puede ir vacio';
+        }
+        if(strlen($this->password) < 6 ){
+            self::$alertas['error'][] = 'El Password debe contener mínimo 6 caracteres';
+        }
+        return self::$alertas;
+    }
 }

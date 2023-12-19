@@ -108,7 +108,7 @@
             $this->password = password_hash($this->password, PASSWORD_BCRYPT);
         }
         public function crearToken() : void {
-            $this->token = uniqid();
+            $this->token = uniqid(); 
         }
     }
 ?>

@@ -176,6 +176,13 @@ class LoginController {
         ]);
         
     }
+    public static function error(Router $router){
+        
+        $router->render('auth/error',[
+            'titulo' => 'Página no Encontrada'
+        ]);
+        
+    }
 }
 
 ?>

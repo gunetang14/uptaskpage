@@ -29,6 +29,9 @@ $router->post('/reset',[LoginController::class, 'reset']);
 $router->get('/message',[LoginController::class, 'message']);
 $router->get('/confirm',[LoginController::class, 'confirm']);
 
+//error 404
+$router->get('/404',[LoginController::class, 'error']);
+
 //zona de proyectos
 $router->get('/dashboard',[DashboardController::class, 'index']);
 $router->get('/new-project',[DashboardController::class, 'project']);

@@ -13,6 +13,7 @@
                     id="email"
                     placeholder="Tú Email"
                     name="email"
+                    autocomplete="off"
                 />
             </div>
             <div class="campo">
@@ -22,6 +23,7 @@
                     id="password"
                     placeholder="Tú Password"
                     name="password"
+                    autocomplete="off"
                 />
             </div>
             <input type="submit" class="boton" value="Iniciar Sesión">
