@@ -7,6 +7,12 @@ use Model\Usuario;
 use MVC\Router;
 #[\AllowDynamicProperties]
 class LoginController {
+    public static function home(Router $router){
+        
+        $router->render('auth/home',[
+            'titulo' => 'UpTask'
+        ]);
+    }
     public static function index(Router $router){
         $alertas = [];
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
@@ -43,7 +49,7 @@ class LoginController {
     public static function logout(Router $router){
         session_start();
         $_SESSION = [];
-        header('Location: /');
+        header('Location: /login');
         
     }
     public static function signup(Router $router){
@@ -115,7 +121,7 @@ class LoginController {
         $alertas = [];
         $mostrar = true;
         $token = s($_GET['token']);
-        if(!$token) header('Location: /');
+        if(!$token) header('Location: /login');
         //Identificar el usuario con el token
         $usuario = Usuario::where('token', $token);
         if(empty($usuario)){
@@ -132,7 +138,7 @@ class LoginController {
                 $usuario->token = null;
                 $resultado = $usuario->guardar();
                 if($resultado) {
-                    header('Location: /');
+                    header('Location: /login');
                 }
             }
 
@@ -153,7 +159,7 @@ class LoginController {
     }
     public static function confirm(Router $router){
         $token = s($_GET['token']);
-        if(!$token) header('Location: /');
+        if(!$token) header('Location: /login');
         // encontrar al usuario con el token
         $usuario = Usuario::where('token', $token);
         if(empty($usuario)){

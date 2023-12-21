@@ -20,7 +20,7 @@
         </form>
         <div class="acciones">
             <a href="/signup">¿Aún no tienes cuenta? Obtener Una Cuenta</a>
-            <a href="/">¿Ya tienes cuenta? Iniciar Sesión</a>
+            <a href="/login">¿Ya tienes cuenta? Iniciar Sesión</a>
         </div>
     </div>
 </div>

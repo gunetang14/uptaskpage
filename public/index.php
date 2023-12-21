@@ -8,9 +8,12 @@ use Controllers\TareaController;
 use MVC\Router;
 $router = new Router();
 
+//home
+$router->get('/',[LoginController::class, 'home']);
+
 //Login
-$router->get('/',[LoginController::class, 'index']);
-$router->post('/',[LoginController::class, 'index']);
+$router->get('/login',[LoginController::class, 'index']);
+$router->post('/login',[LoginController::class, 'index']);
 $router->get('/logout',[LoginController::class, 'logout']);
 
 //crear cuenta
